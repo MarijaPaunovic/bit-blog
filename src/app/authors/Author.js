@@ -9,22 +9,22 @@ const Author = () => {
                 <h2>AUTHORS (6)</h2>
 
                 <div>
-                    <p><Link to='/AuthorBlog'>Name Surname (2 - posts)</Link></p>
+                    <p><Link to='/author-blog'>Name Surname (2 - posts)</Link></p>
                     <hr></hr>
                 </div>
 
                 <div>
-                    <p><Link to="/AuthorBlog">Name Surname (2 - posts)</Link></p>
+                    <p><Link to='/author-blog'>Name Surname (2 - posts)</Link></p>
                     <hr></hr>
                 </div>
 
                 <div>
-                    <p><Link to="/AuthorBlog">Name Surname (2 - posts)</Link></p>
+                    <p><Link to='/author-blog'>Name Surname (2 - posts)</Link></p>
                     <hr></hr>
                 </div>
 
                 <div>
-                    <p><Link to="/AuthorBlog">Name Surname (2 - posts)</Link></p>
+                    <p><Link to='/author-blog'>Name Surname (2 - posts)</Link></p>
                     <hr></hr>
                 </div>
 

@@ -10,9 +10,9 @@ const Header = () => {
                     <h1>BIT BLOG</h1>
 
                     <ul id="nav-mobile" className="right hide-on-med-and-down">
-                        <li><Link to='/Posts'>Home</Link></li>
-                        <li><Link to='/Author'>Authors</Link></li>
-                        <li><Link to='/About'>About</Link></li>
+                        <li><Link to='/'>Home</Link></li>
+                        <li><Link to='/authors'>Authors</Link></li>
+                        <li><Link to='/about'>About</Link></li>
                     </ul>
 
                 </div>
