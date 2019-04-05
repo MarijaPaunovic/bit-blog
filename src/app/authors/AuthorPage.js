@@ -1,38 +1,45 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import FetchAuthor from '../../services/FetchAuthors';
-import PostPage from '../../entities/PostPage';
-import AuthorList from './AuthorList';
+import { FetchPost } from '../../services/FetchPosts';
 
 class AuthorPage extends React.Component {
     constructor(props) {
         super(props);
 
-        // this.state = {
-        //     authors: []
-        // }
+        this.state = {
+            post: {},
+            author: []
+        }
     }
 
-    // componentDidMount() {
-    //     const authorId = this.props.match.params.userId
-    //     FetchAuthor()
-    //         .then((users) => {
-    //             this.setState({
-    //                 authors: users
-    //             })
-    //         })
-    // }
+    componentDidMount() {
+        const id = this.props.match.params.postId
+        FetchPost(id)
+            .then((post) => {
+                console.log(post);
+                this.setState({
+                    post: post
+                })
+                FetchAuthor(this.state.post.userId)
+                    .then((author) => {
+                        console.log(author);
+                        this.setState({
+                            author: author
+                        })
+                    }
+                    )
+
+            })
+    }
+
     render() {
-        // const postPageAuthor = <PostPage
-        //     authorName={this.state.author.username}
-        // />
         return (
             <>
                 <div>
-                    <h2>{this.props.author}</h2>
+                    <h2>SINGLE AUTHOR</h2>
 
                     <div>
-                        <img src='' alt='' />
+                        <img src='https://via.placeholder.com/150' alt='' />
                         <h3>Name Surname</h3>
                         <p>username: ___________</p>
                         <p>email: ___________</p>
