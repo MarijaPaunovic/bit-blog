@@ -31,7 +31,7 @@ class PostsList extends React.Component {
                         {this.state.posts.map((post) => (
                             <div>
 
-                                <h6><Link to='/post-page'>{post.title}</Link></h6>
+                                <h6><Link to={`/post-page/${post.id}`}>{post.title}</Link></h6>
                                 <p>{post.body}</p>
 
                                 <hr />

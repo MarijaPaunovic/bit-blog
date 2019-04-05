@@ -1,6 +1,7 @@
 import ShareData from '../shared/ShareData';
 import Post from '../entities/Post';
 
+
 const FetchPosts = () => (
     fetch(ShareData.url)
         .then(response => response.json())
@@ -8,13 +9,19 @@ const FetchPosts = () => (
         .then(apiPosts => {
             const posts = apiPosts
                 .map((post) => {
-                    // const { id, title, body } = post;
-                    return new Post(post.id, post.title, post.body)
+                    return new Post(post.id, post.title, post.body, post.userId)
 
                 })
 
             return posts
         })
 )
+export const FetchPost = (id) => (
+    fetch(`${ShareData.url}/${id}`)
+        .then(response => response.json())
+        .then(post => {
+            return new Post(post.id, post.title, post.body, post.userId)
+        })
+);
 
 export default FetchPosts;
