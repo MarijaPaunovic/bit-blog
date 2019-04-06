@@ -1,34 +1,26 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { FetchAuthor } from '../../services/FetchAuthors';
-import { FetchPost } from '../../services/FetchPosts';
+
+
 
 class AuthorPage extends React.Component {
     constructor(props) {
         super(props);
 
         this.state = {
-            post: {},
             author: []
         }
     }
 
     componentDidMount() {
-        const id = this.props.match.params.postId
-        FetchPost(id)
-            .then((post) => {
-                console.log(post);
+        const id = this.props.match.params.userId
+        FetchAuthor(id)
+            .then((author) => {
+                console.log(author)
                 this.setState({
-                    post: post
+                    author
                 })
-                FetchAuthor(this.state.post.userId)
-                    .then((author) => {
-                        console.log(author);
-                        this.setState({
-                            author: author
-                        })
-                    }
-                    )
-
             })
     }
 
@@ -36,37 +28,45 @@ class AuthorPage extends React.Component {
         return (
             <>
                 <div>
-                    <h2>SINGLE AUTHOR</h2>
-
                     <div>
-                        <img src='https://via.placeholder.com/150' alt='' />
-                        <h3>Name Surname</h3>
-                        <p>username: ___________</p>
-                        <p>email: ___________</p>
-                        <p>phone: ___________</p>
-
-                        <hr></hr>
+                        <span><Link to={`/authors`}> &lsaquo; All authors</Link></span>
+                        <h2 className='authorTitle'>SINGLE AUTHOR</h2>
                     </div>
 
-                    <div>
-                        <h3>Address</h3>
-                        <p>street: ___________</p>
-                        <p>city: ___________</p>
-                        <p>zipcode: ___________</p>
-                        <iframe>
-                            Google MAP ubaciti !!!
+                <div className='authorPicture'>
+                    <img src='https://via.placeholder.com/150' alt='' />
+                </div>
+
+                    <div className='authorInfo'>
+                        <h4>{this.state.author.name}</h4>
+                        <p>username: {this.state.author.username}</p>
+                        <p>email: {this.state.author.email}</p>
+                        <p>phone: {this.state.author.phone}</p>
+                    </div>
+
+                    <hr></hr>
+
+                    <div className='authorAddress'>
+                        <h4>Address</h4>
+                        <p>street: {this.state.author.street}</p>
+                        <p>city: {this.state.author.city}</p>
+                        <p>zipcode: {this.state.author.zipCode}</p>
+                    </div>
+                    
+                    <div className='authorAddressMap'>
+                    <iframe src={`https://maps.google.com/maps?q=${this.state.author.geoLat},${this.state.author.geoLng}&hl=es;z=14&amp;&output=embed`}>
                     </iframe>
-
-                        <hr></hr>
                     </div>
 
-                    <div>
-                        <h3>Company</h3>
-                        <p>name: ___________</p>
-                        <p>slogan: ___________</p>
+                    <hr></hr>
 
-                        <hr></hr>
+                    <div className='authorCompany'>
+                        <h4>Company</h4>
+                        <p>name: {this.state.author.companyName}</p>
+                        <p>slogan:  {this.state.author.companyBs}</p>
                     </div>
+                    
+                    <hr></hr>
 
                 </div>
             </>

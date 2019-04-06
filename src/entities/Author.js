@@ -1,6 +1,6 @@
 
 class Author {
-    constructor(userId, name, username, email, phone, street, city, zipcode, companyName, companyBs, addressGeoLat, addressGeoLng) {
+    constructor(userId, name, username, email, phone, street, city, zipcode, companyName, companyBs, geoLat, geoLng) {
         this.userId = userId;
         this.name = name;
         this.username = username;
@@ -11,8 +11,8 @@ class Author {
         this.zipCode = zipcode;
         this.companyName = companyName;
         this.companyBs = companyBs;
-        this.geoLat = addressGeoLat;
-        this.geoLng = addressGeoLng
+        this.geoLat = geoLat;
+        this.geoLng = geoLng
     }
 }
 export default Author;

@@ -7,7 +7,7 @@ const FetchAuthors = () => (
         .then(response => response.json())
         .then(authorsArray => {
             const authors = authorsArray.map((author) => {
-                return new Author(author.userId, author.name, author.username, author.address.street, author.address.city, author.address.zipcode, author.company.name, author.company.bs, author.address.geo.lat, author.address.geo.lng)
+                return new Author(author.userId, author.name, author.username, author.email, author.phone, author.address.street, author.address.city, author.address.zipcode, author.company.name, author.company.bs, author.address.geo.lat, author.address.geo.lng)
             }
             )
             return authors
@@ -18,13 +18,13 @@ const FetchAuthor = (authorId) => (
     fetch(`${ShareData.url2}/${authorId}`)
         .then(response => response.json())
         .then(author => {
-            return new Author(author.userId, author.name, author.username)
+            return new Author(author.id, author.name, author.username, author.email, author.phone, author.address.street, author.address.city, author.address.zipcode, author.company.name, author.company.bs, author.address.geo.lat, author.address.geo.lng)
         })
 
 )
 
 const FetchAuthorPosts = (authorId) => (
-    fetch(`${ShareData.url}?userId=${authorId}`)
+    fetch(`${ShareData.url2}?userId=${authorId}`)
     .then(response => response.json())
     .then(posts => posts.map((posts) => {
         return new Post(posts.id, posts.title, posts.body, posts.userId)

@@ -19,5 +19,43 @@ code {
 }
 h1 {
   margin: 0;
-  display: inline;
+  font-weight: bolder;
+  margin-top: 12px;
+}
+nav {
+  background-color: #0d47a1;
+}
+nav  ul {
+  margin-right: 20px;
+}
+main {
+  width: 80%;
+  margin: 0 auto;
+}
+hr {
+  margin: 20px 0;
+}
+h5, h3 {
+  text-transform: uppercase;
+}
+h2, h4 {
+  font-weight: bold;
+}
+h4 {
+  margin-top: 0;
+}
+.authorTitle {
+  text-align: center;
+  margin-bottom: 50px;
+}
+.authorPicture {
+  display: inline-block;
+  margin-right: 50px;
+}
+.authorInfo, .authorAddress, .authorCompany  {
+  display: inline-block;
+  line-height: 2.5em;
+}
+.authorAddressMap {
+  float: right;
 }

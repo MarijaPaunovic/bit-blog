@@ -40,7 +40,7 @@ class PostPage extends React.Component {
 
     // componentDidUpdate(prevProps) {
     //     if(prevProps.match.params.postId !== this.match.params.postId) {
-    //         FetchSingleAuthorPost(this.props.match.params.postId)
+    //         FetchAuthorPosts(this.props.match.params.postId)
     //         .then((post) => {
     //             this.setState({
     //                 post
@@ -58,7 +58,7 @@ class PostPage extends React.Component {
                 <div>
                     <div>
                         <div>
-                            <h2>{this.props.match.params.postId} - {this.state.post.title}</h2>
+                            <h3>{this.props.match.params.postId} - {this.state.post.title}</h3>
                             <h4><Link to={`/author/${this.state.post.userId}`}>
                                 {author.name}
                                 {/* {author.username} */}
@@ -68,7 +68,7 @@ class PostPage extends React.Component {
                         <hr />
                         <div>
                             <h4>3 more posts from same author</h4>
-                            <p><Link to='/author-blog'>Title 10 - velit, vulputate</Link></p>
+                            <p><Link to='#'>Title 10 - velit, vulputate</Link></p>
                             <p><Link to='/author-blog'>Title 11 - velit, vulputate</Link></p>
                             <p><Link to='/author-blog'>Title 12 - velit, vulputate</Link></p>
                             <hr></hr>

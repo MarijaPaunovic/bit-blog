@@ -7,7 +7,7 @@ const Header = () => {
         <>
             <nav>
                 <div className="nav-wrapper">
-                    <h1>BIT BLOG</h1>
+                    <h1 className="brand-logo center">BIT BLOG</h1>
 
                     <ul id="nav-mobile" className="right hide-on-med-and-down">
                         <li><Link to='/'>Home</Link></li>
