@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { FetchPost } from '../services/FetchPosts';
-import { FetchAuthor } from '../services/FetchAuthors';
+import FetchPost from '../../services/FetchPosts';
+import FetchAuthor from '../../services/FetchAuthors';
 
 
 class PostPage extends React.Component {

@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import FetchPosts from '../services/FetchPosts'
-//import Post from './Post';
+import FetchPosts from '../../services/FetchPosts'
 
 class PostsList extends React.Component {
     constructor(props) {
