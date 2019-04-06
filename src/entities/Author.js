@@ -1,3 +1,4 @@
+
 class Author {
     constructor(userId, name, username, email, phone, street, city, zipCode, companyName, companyBs) {
         this.userId = userId;

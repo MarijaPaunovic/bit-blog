@@ -1,5 +1,4 @@
 
-
 class Post {
     constructor(id, title, body, userId) {
         this.id = id;
