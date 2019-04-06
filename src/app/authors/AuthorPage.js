@@ -66,7 +66,8 @@ class AuthorPage extends React.Component {
                         <p>slogan:  {this.state.author.companyBs}</p>
                     </div>
                     
-                    <hr></hr>
+                    <br></br>
+                    <br></br>
 
                 </div>
             </>

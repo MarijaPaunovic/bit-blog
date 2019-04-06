@@ -24,7 +24,7 @@ const FetchAuthor = (authorId) => (
 )
 
 const FetchAuthorPosts = (authorId) => (
-    fetch(`${ShareData.url2}?userId=${authorId}`)
+    fetch(`${ShareData.url}?userId=${authorId}`)
     .then(response => response.json())
     .then(posts => posts.map((posts) => {
         return new Post(posts.id, posts.title, posts.body, posts.userId)

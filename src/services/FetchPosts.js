@@ -22,10 +22,7 @@ const FetchPost = (id) => (
         .then(post => {
             return new Post(post.id, post.title, post.body, post.userId)
         })
-)
-
-
-
+);
 
 export {
     FetchPosts,

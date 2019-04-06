@@ -1,8 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { FetchAuthors } from '../../services/FetchAuthors';
-import { FetchAuthor } from '../../services/FetchAuthors';
-import Author from '../../entities/Author';
 
 
 class AuthorList extends React.Component {
