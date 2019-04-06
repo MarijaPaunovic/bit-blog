@@ -51,7 +51,7 @@ class PostPage extends React.Component {
 
     render() {
         const author = this.state.author;
-        const ap = this.state.authorPosts;
+        // const ap = this.state.authorPosts;
         return (
             <>
                 <div>
