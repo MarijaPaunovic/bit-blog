@@ -1,7 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import FetchPost from '../../services/FetchPosts';
-import FetchAuthor from '../../services/FetchAuthors';
+import { FetchPost } from '../../services/FetchPosts';
+import { FetchAuthor, FetchAuthorPosts } from '../../services/FetchAuthors';
+
 
 
 class PostPage extends React.Component {
@@ -9,8 +10,9 @@ class PostPage extends React.Component {
         super(props);
 
         this.state = {
-            post: {},
-            author: {}
+            post: [],
+            author: {},
+            authorPosts: []
         }
     }
 
@@ -19,19 +21,36 @@ class PostPage extends React.Component {
         FetchPost(id)
             .then((post) => {
                 this.setState({
-                    post: post
+                    post
                 })
-                FetchAuthor(this.state.post.userId)
-                    .then((author) => {
-                        this.setState({
-                            author: author
-                        })
-                    }
-                    )
-
+        FetchAuthor(this.state.post.userId)
+            .then((author) => {
+                this.setState({
+                    author
+                })
+                })
+        FetchAuthorPosts(this.state.post.userId)
+            .then((authorPosts) => {
+                this.setState({
+                    authorPosts
+                })
             })
+        })
     }
 
+    // componentDidUpdate(prevProps) {
+    //     if(prevProps.match.params.postId !== this.match.params.postId) {
+    //         FetchSingleAuthorPost(this.props.match.params.postId)
+    //         .then((post) => {
+    //             this.setState({
+    //                 post
+    //             })
+    //         })
+    //     }
+    // }
+
+
+    
     render() {
         const author = this.state.author;
         return (
@@ -41,8 +60,8 @@ class PostPage extends React.Component {
                         <div>
                             <h2>{this.props.match.params.postId} - {this.state.post.title}</h2>
                             <h4><Link to={`/author/${this.state.post.userId}`}>
-                                {author.name}  2
-                                {author.username} 2
+                                {author.name}
+                                {/* {author.username} */}
                             </Link></h4>
                         </div>
                         <p>{this.state.post.body}</p>

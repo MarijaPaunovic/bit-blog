@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import FetchPosts from '../../services/FetchPosts'
+import { FetchPosts } from '../../services/FetchPosts'
 
 class PostsList extends React.Component {
     constructor(props) {
@@ -25,16 +25,16 @@ class PostsList extends React.Component {
         return (
             <>
                 <div>
+
                     <h2>POSTS</h2>
+
                     <div>
                         {this.state.posts.map((post) => (
                             <div>
-
-                                <h6><Link to={`/post-page/${post.id}`}>{post.title}</Link></h6>
+                                <h5><Link to={`/post-page/${post.id}`}>{post.title}</Link></h5>
                                 <p>{post.body}</p>
 
                                 <hr />
-
                             </div>
                         ))
 

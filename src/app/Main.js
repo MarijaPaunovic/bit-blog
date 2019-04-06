@@ -1,33 +1,26 @@
 import React from 'react';
 import { Switch, Route, Redirect } from 'react-router-dom';
 import About from './about/About';
-import PostsList from '../entities/PostsList';
+import PostsList from './posts/PostsList';
 import AuthorPage from './authors/AuthorPage';
 import AuthorList from './authors/AuthorList';
-import PostPage from '../entities/PostPage';
-// import FetchPosts from '../shared/ShareData';
+import PostPage from './posts/PostPage';
 
 
-class Main extends React.Component {
-    constructor(props) {
-        super(props);
-
-    }
-
-    render() {
+const Main = (props) => {
         return (
             <main>
                 <Switch>
-                    <Route exact path='/' component={PostsList} />
-                    <Route exact path='/author/:userId' component={AuthorPage} />
-                    <Route exact path='/about' component={About} />
+                    <Route path='/about' component={About} />
+                    <Route path='/author/:userId' component={AuthorPage} />
                     <Route path='/authors' component={AuthorList} />
                     <Route path='/post-page/:postId' component={PostPage} />
+                    <Route path='/' component={PostsList} />
                 </Switch>
 
             </main>
         )
     }
-}
+
 
 export default Main;

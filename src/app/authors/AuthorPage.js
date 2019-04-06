@@ -1,5 +1,5 @@
 import React from 'react';
-import FetchAuthor from '../../services/FetchAuthors';
+import { FetchAuthor } from '../../services/FetchAuthors';
 import { FetchPost } from '../../services/FetchPosts';
 
 class AuthorPage extends React.Component {
@@ -73,4 +73,5 @@ class AuthorPage extends React.Component {
         )
     }
 }
+
 export default AuthorPage;
