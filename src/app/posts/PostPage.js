@@ -49,6 +49,20 @@ class PostPage extends React.Component {
         })
     }
 
+ 
+/*    componentDidUpdate(prevProps){
+        if(prevProps.postId !== this.props.match.params.postId){
+            FetchPost(this.props.match.params.postId)
+            .then((post) =>{
+                this.setState({
+                    post : post
+                })
+            })
+           
+        }
+    }
+*/
+    
     render() {
         const author = this.state.author;
         // const ap = this.state.authorPosts;
