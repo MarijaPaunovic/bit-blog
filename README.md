@@ -1,6 +1,6 @@
 # BIT BLOG
 
-
+To see project, please go to link: https://marija-paunovic-bitblog.netlify.com/
 
 ## TASKS
 
